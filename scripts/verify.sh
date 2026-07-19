@@ -37,7 +37,7 @@ node <<'NODE'
 const fs = require('fs');
 
 const expectedClientID = 'https://breezymind.github.io/blacksky/oauth-client-metadata.json';
-const expectedRedirectURI = 'blacksky://oauth/callback';
+const expectedRedirectURI = 'io.github.breezymind:/oauth/callback';
 const metadataPath = 'public/oauth-client-metadata.json';
 let metadata;
 try {
@@ -87,7 +87,8 @@ printf '%s\n' '== App contract checks =='
 contains blacksky/Info.plist '<key>CFBundleDisplayName</key>'
 contains blacksky/Info.plist '<key>CFBundleName</key>'
 contains blacksky/Info.plist '<string>blacksky</string>'
-contains blacksky/Info.plist '<string>com.blacksky.oauth-callback</string>'
+contains blacksky/Info.plist '<string>io.github.breezymind.oauth-callback</string>'
+contains blacksky/Info.plist '<string>io.github.breezymind</string>'
 contains blacksky/Views/MainShellView.swift 'NavigationSplitView'
 contains blacksky/App/BlackskyApp.swift '.defaultSize(width: 980, height: 720)'
 contains blacksky/App/BlackskyApp.swift 'keyboardShortcut("1", modifiers: .command)'
@@ -96,7 +97,7 @@ contains blacksky/App/BlackskyApp.swift 'keyboardShortcut("r", modifiers: .comma
 contains blacksky/Views/LoginView.swift 'Bluesky 핸들'
 contains blacksky/Views/LoginView.swift 'Bluesky로 로그인'
 contains blacksky/Services/OAuthService.swift 'OAuthClientConfiguration'
-contains blacksky/Services/OAuthService.swift 'blacksky://oauth/callback'
+contains blacksky/Services/OAuthService.swift 'io.github.breezymind:/oauth/callback'
 contains blacksky/Services/OAuthService.swift 'pushed_authorization_request_endpoint'
 contains blacksky/Services/OAuthService.swift 'DPoPProofBuilder'
 contains blacksky/Services/OAuthService.swift 'code_challenge_method'
@@ -184,15 +185,20 @@ const context = documentByPath.get('context/main');
 if (!adr || !context) {
     throw new Error('필수 architecture 문서(ADR/context)가 누락되었습니다.');
 }
-for (const term of ['blacksky://oauth/callback', 'client metadata', 'Keychain']) {
+for (const term of ['client metadata', 'Keychain']) {
     if (!adr.body.includes(term)) throw new Error(`ADR에 '${term}' 근거가 없습니다.`);
 }
 const dpopADR = documentByPath.get('adr/0002-dpop-key-protection');
 if (!dpopADR) throw new Error('DPoP 보호 ADR이 누락되었습니다.');
+const callbackADR = documentByPath.get('adr/0003-atproto-native-callback-uri');
+if (!callbackADR) throw new Error('atproto callback URI ADR이 누락되었습니다.');
+for (const term of ['io.github.breezymind:/oauth/callback', 'breezymind.github.io', 'superseded']) {
+    if (!callbackADR.body.includes(term)) throw new Error(`callback ADR에 '${term}' 근거가 없습니다.`);
+}
 for (const term of ['Secure Enclave', 'Keychain', 'nonce']) {
     if (!dpopADR.body.includes(term)) throw new Error(`DPoP ADR에 '${term}' 근거가 없습니다.`);
 }
-for (const term of ['읽기 전용 MVP', 'app.bsky.feed.getTimeline', 'app.bsky.graph.getFollows', 'URI', 'DID', 'DPoP']) {
+for (const term of ['읽기 전용 MVP', 'app.bsky.feed.getTimeline', 'app.bsky.graph.getFollows', 'URI', 'DID', 'DPoP', 'io.github.breezymind:/oauth/callback']) {
     if (!context.body.includes(term)) throw new Error(`context/main에 '${term}' 용어가 없습니다.`);
 }
 NODE

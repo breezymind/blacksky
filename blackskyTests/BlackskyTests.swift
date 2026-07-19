@@ -72,8 +72,8 @@ final class BlackskyTests: XCTestCase {
     func testConfigurationUsesHostedMetadataAndRegistersOAuthCallback() {
         let configuration = OAuthClientConfiguration.development
         XCTAssertEqual(configuration.clientID, "https://breezymind.github.io/blacksky/oauth-client-metadata.json")
-        XCTAssertEqual(configuration.redirectURI.absoluteString, "blacksky://oauth/callback")
-        XCTAssertEqual(configuration.redirectURI.scheme, "blacksky")
+        XCTAssertEqual(configuration.redirectURI.absoluteString, "io.github.breezymind:/oauth/callback")
+        XCTAssertEqual(configuration.redirectURI.scheme, "io.github.breezymind")
     }
 
     func testTimelineAndFollowingRequestsUseReadOnlyEndpointLimits() async throws {
@@ -113,8 +113,8 @@ final class BlackskyTests: XCTestCase {
         XCTAssertEqual(info["CFBundleDisplayName"] as? String, "blacksky")
         let urlTypes = try XCTUnwrap(info["CFBundleURLTypes"] as? [[String: Any]])
         let schemes = urlTypes.flatMap { $0["CFBundleURLSchemes"] as? [String] ?? [] }
-        XCTAssertTrue(schemes.contains("blacksky"))
-        XCTAssertEqual(OAuthClientConfiguration.development.redirectURI.absoluteString, "blacksky://oauth/callback")
+        XCTAssertTrue(schemes.contains("io.github.breezymind"))
+        XCTAssertEqual(OAuthClientConfiguration.development.redirectURI.absoluteString, "io.github.breezymind:/oauth/callback")
     }
 
     @MainActor
@@ -242,7 +242,7 @@ final class BlackskyTests: XCTestCase {
     func testOAuthUsesDiscoveryPARPKCEDPoPAndCallbackWithoutPasswordInput() async throws {
         let configuration = OAuthClientConfiguration(
             clientID: "https://client.example/metadata.json",
-            redirectURI: URL(string: "blacksky://oauth/callback")!,
+            redirectURI: URL(string: "io.github.breezymind:/oauth/callback")!,
             scope: "atproto"
         )
         let resolver = FixedIdentityResolver()
@@ -266,7 +266,7 @@ final class BlackskyTests: XCTestCase {
         XCTAssertEqual(parRequest.value(forHTTPHeaderField: "DPoP")?.split(separator: ".").count, 3)
         XCTAssertTrue(String(data: parRequest.httpBody ?? Data(), encoding: .utf8)?.contains("code_challenge") == true)
 
-        let callback = URL(string: "blacksky://oauth/callback?code=test-code&state=\(state)&iss=https%3A%2F%2Fauth.example")!
+        let callback = URL(string: "io.github.breezymind:/oauth/callback?code=test-code&state=\(state)&iss=https%3A%2F%2Fauth.example")!
         let session = try await service.completeLogin(callbackURL: callback)
         XCTAssertEqual(session.did, "did:plc:resolved")
         XCTAssertEqual(session.handle, "reader.test")

@@ -27,7 +27,7 @@ struct OAuthClientConfiguration: Sendable, Equatable {
 
     static let development = OAuthClientConfiguration(
         clientID: "https://breezymind.github.io/blacksky/oauth-client-metadata.json",
-        redirectURI: URL(string: "blacksky://oauth/callback")!,
+        redirectURI: URL(string: "io.github.breezymind:/oauth/callback")!,
         scope: "atproto transition:generic"
     )
 }

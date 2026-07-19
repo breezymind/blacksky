@@ -26,10 +26,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>CFBundleURLName</key>
-			<string>com.blacksky.oauth-callback</string>
+			<string>io.github.breezymind.oauth-callback</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>blacksky</string>
+				<string>io.github.breezymind</string>
 			</array>
 		</dict>
 	</array>
