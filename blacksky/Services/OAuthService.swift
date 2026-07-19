@@ -228,6 +228,12 @@ actor OAuthService: OAuthAuthenticating {
             transaction = nil
             throw OAuthError.invalidCallback
         }
+        if let expectedIssuer = current.discovery.issuer {
+            guard queryItems.first(where: { $0.name == "iss" })?.value == expectedIssuer.absoluteString else {
+                transaction = nil
+                throw OAuthError.protocolViolation("authorization issuer mismatch")
+            }
+        }
         guard let code = queryItems.first(where: { $0.name == "code" })?.value else {
             throw OAuthError.missingAuthorizationCode
         }

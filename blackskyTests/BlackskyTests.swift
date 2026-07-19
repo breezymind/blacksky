@@ -266,7 +266,7 @@ final class BlackskyTests: XCTestCase {
         XCTAssertEqual(parRequest.value(forHTTPHeaderField: "DPoP")?.split(separator: ".").count, 3)
         XCTAssertTrue(String(data: parRequest.httpBody ?? Data(), encoding: .utf8)?.contains("code_challenge") == true)
 
-        let callback = URL(string: "blacksky://oauth/callback?code=test-code&state=\(state)")!
+        let callback = URL(string: "blacksky://oauth/callback?code=test-code&state=\(state)&iss=https%3A%2F%2Fauth.example")!
         let session = try await service.completeLogin(callbackURL: callback)
         XCTAssertEqual(session.did, "did:plc:resolved")
         XCTAssertEqual(session.handle, "reader.test")
