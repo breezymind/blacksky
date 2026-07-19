@@ -148,13 +148,17 @@ final class BlackskyTests: XCTestCase {
             accessToken: session.accessToken,
             refreshToken: session.refreshToken,
             expiresAt: Date().addingTimeInterval(-1),
-            scope: session.scope
+            scope: session.scope,
+            dpopKey: session.dpopKey,
+            authorizationServer: session.authorizationServer,
+            authorizationServerNonce: session.authorizationServerNonce,
+            resourceServerNonce: session.resourceServerNonce
         )
         try expiredStore.save(expired)
         let expiredApp = AppModel(api: FakeBlueskyAPI(), credentialStore: expiredStore, oauth: NoOpOAuth())
         await expiredApp.restoreSession()
 
-        XCTAssertEqual(expiredApp.authState, .loggedOut(message: "세션이 만료되었습니다. 다시 로그인해 주세요."))
+        XCTAssertEqual(expiredApp.authState, .loggedOut(message: "로그인 세션이 만료되었습니다. 다시 로그인해 주세요."))
         XCTAssertNil(try expiredStore.load())
     }
 
@@ -235,22 +239,32 @@ final class BlackskyTests: XCTestCase {
         XCTFail("이미지 요청이 취소되지 않았습니다.")
     }
 
-    func testOAuthExchangesPKCECallbackWithoutPasswordInput() async throws {
+    func testOAuthUsesDiscoveryPARPKCEDPoPAndCallbackWithoutPasswordInput() async throws {
         let configuration = OAuthClientConfiguration(
             clientID: "https://client.example/metadata.json",
             redirectURI: URL(string: "blacksky://oauth/callback")!,
-            authorizationEndpoint: URL(string: "https://auth.example/authorize")!,
-            tokenEndpoint: URL(string: "https://auth.example/token")!,
             scope: "atproto"
         )
         let resolver = FixedIdentityResolver()
-        let httpClient = RecordingHTTPClient(payload: Data(#"{"access_token":"access","refresh_token":"refresh","expires_in":3600,"scope":"atproto","sub":"did:plc:resolved"}"#.utf8))
+        let httpClient = OAuthFixtureHTTPClient()
         let service = OAuthService(configuration: configuration, identityResolver: resolver, httpClient: httpClient)
         let authorizationURL = try await service.startLogin(handle: "reader.test")
-        let authorizationQuery = try XCTUnwrap(URLComponents(url: authorizationURL, resolvingAgainstBaseURL: false)?.queryItems)
-        let state = try XCTUnwrap(authorizationQuery.first(where: { $0.name == "state" })?.value)
-        XCTAssertEqual(authorizationQuery.first(where: { $0.name == "code_challenge_method" })?.value, "S256")
-        XCTAssertEqual(authorizationQuery.first(where: { $0.name == "login_hint" })?.value, "reader.test")
+        let authorizationComponents = try XCTUnwrap(URLComponents(url: authorizationURL, resolvingAgainstBaseURL: false))
+        let authorizationQuery = try XCTUnwrap(authorizationComponents.queryItems)
+        let requestsAfterStart = await httpClient.requests
+        let parBody = try XCTUnwrap(requestsAfterStart.last { $0.url?.path == "/oauth/par" }?.httpBody)
+        let parItems = try XCTUnwrap(URLComponents(string: "?\(String(data: parBody, encoding: .utf8) ?? "")")?.queryItems)
+        let state = try XCTUnwrap(parItems.first(where: { $0.name == "state" })?.value)
+        XCTAssertEqual(authorizationComponents.host, "auth.example")
+        XCTAssertEqual(authorizationComponents.path, "/oauth/authorize")
+        XCTAssertEqual(authorizationQuery.first(where: { $0.name == "request_uri" })?.value, "urn:example:request")
+        XCTAssertNil(authorizationQuery.first(where: { $0.name == "password" }))
+
+        let requests = await httpClient.requests
+        XCTAssertEqual(requests.filter { $0.url?.path == "/oauth/par" }.count, 2)
+        let parRequest = try XCTUnwrap(requests.first { $0.url?.path == "/oauth/par" })
+        XCTAssertEqual(parRequest.value(forHTTPHeaderField: "DPoP")?.split(separator: ".").count, 3)
+        XCTAssertTrue(String(data: parRequest.httpBody ?? Data(), encoding: .utf8)?.contains("code_challenge") == true)
 
         let callback = URL(string: "blacksky://oauth/callback?code=test-code&state=\(state)")!
         let session = try await service.completeLogin(callbackURL: callback)
@@ -258,6 +272,8 @@ final class BlackskyTests: XCTestCase {
         XCTAssertEqual(session.handle, "reader.test")
         XCTAssertEqual(session.accessToken, "access")
         XCTAssertEqual(session.refreshToken, "refresh")
+        XCTAssertNotNil(session.dpopKey)
+        XCTAssertEqual(session.authorizationServerNonce, "token-nonce")
     }
 
     private func makeSession() -> OAuthSession {
@@ -268,7 +284,8 @@ final class BlackskyTests: XCTestCase {
             accessToken: "access-token-for-test",
             refreshToken: "refresh-token-for-test",
             expiresAt: Date().addingTimeInterval(3600),
-            scope: "atproto"
+            scope: "atproto",
+            dpopKey: .testing
         )
     }
 

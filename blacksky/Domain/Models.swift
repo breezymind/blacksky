@@ -1,4 +1,57 @@
+import CryptoKit
 import Foundation
+
+struct DPoPKeyMaterial: Codable, Equatable, Sendable {
+    let dataRepresentation: Data
+    let usesSecureEnclave: Bool
+
+    static func generate() -> DPoPKeyMaterial {
+        if let key = try? SecureEnclave.P256.Signing.PrivateKey() {
+            return DPoPKeyMaterial(dataRepresentation: key.dataRepresentation, usesSecureEnclave: true)
+        }
+        return DPoPKeyMaterial(
+            dataRepresentation: P256.Signing.PrivateKey().rawRepresentation,
+            usesSecureEnclave: false
+        )
+    }
+
+    static let testing = DPoPKeyMaterial(
+        dataRepresentation: P256.Signing.PrivateKey().rawRepresentation,
+        usesSecureEnclave: false
+    )
+
+    func sign(_ data: Data) throws -> Data {
+        if usesSecureEnclave {
+            let key = try SecureEnclave.P256.Signing.PrivateKey(dataRepresentation: dataRepresentation)
+            return try key.signature(for: data).rawRepresentation
+        }
+        let key = try P256.Signing.PrivateKey(rawRepresentation: dataRepresentation)
+        return try key.signature(for: data).rawRepresentation
+    }
+
+    var publicJWK: [String: String] {
+        get throws {
+            let raw: Data
+            if usesSecureEnclave {
+                raw = try SecureEnclave.P256.Signing.PrivateKey(dataRepresentation: dataRepresentation).publicKey.rawRepresentation
+            } else {
+                raw = try P256.Signing.PrivateKey(rawRepresentation: dataRepresentation).publicKey.rawRepresentation
+            }
+            guard raw.count == 64 else { throw DPoPError.invalidKey }
+            return [
+                "kty": "EC",
+                "crv": "P-256",
+                "x": raw.prefix(32).base64URLEncoded,
+                "y": raw.suffix(32).base64URLEncoded
+            ]
+        }
+    }
+}
+
+enum DPoPError: Error, Equatable, Sendable {
+    case invalidKey
+    case signingFailed
+}
 
 struct OAuthSession: Codable, Equatable, Sendable {
     let did: String
@@ -8,10 +61,42 @@ struct OAuthSession: Codable, Equatable, Sendable {
     let refreshToken: String
     let expiresAt: Date
     let scope: String
+    let dpopKey: DPoPKeyMaterial?
+    let authorizationServer: URL?
+    let authorizationServerNonce: String?
+    let resourceServerNonce: String?
+
+    init(
+        did: String,
+        handle: String,
+        pdsURL: URL,
+        accessToken: String,
+        refreshToken: String,
+        expiresAt: Date,
+        scope: String,
+        dpopKey: DPoPKeyMaterial? = nil,
+        authorizationServer: URL? = nil,
+        authorizationServerNonce: String? = nil,
+        resourceServerNonce: String? = nil
+    ) {
+        self.did = did
+        self.handle = handle
+        self.pdsURL = pdsURL
+        self.accessToken = accessToken
+        self.refreshToken = refreshToken
+        self.expiresAt = expiresAt
+        self.scope = scope
+        self.dpopKey = dpopKey
+        self.authorizationServer = authorizationServer
+        self.authorizationServerNonce = authorizationServerNonce
+        self.resourceServerNonce = resourceServerNonce
+    }
 
     var isExpired: Bool {
         expiresAt <= Date().addingTimeInterval(60)
     }
+
+    var canUseDPoP: Bool { dpopKey != nil }
 }
 
 struct Profile: Codable, Equatable, Identifiable, Sendable {
@@ -134,5 +219,55 @@ extension Date {
     static func parseISO8601(_ value: String?) -> Date? {
         guard let value else { return nil }
         return ISO8601DateFormatter().date(from: value)
+    }
+}
+
+extension Data {
+    var base64URLEncoded: String {
+        base64EncodedString()
+            .replacingOccurrences(of: "+", with: "-")
+            .replacingOccurrences(of: "/", with: "_")
+            .trimmingCharacters(in: CharacterSet(charactersIn: "="))
+    }
+}
+
+enum DPoPProofBuilder {
+    static func make(
+        key: DPoPKeyMaterial,
+        method: String,
+        url: URL,
+        nonce: String?
+    ) throws -> String {
+        let header: [String: Any] = [
+            "typ": "dpop+jwt",
+            "alg": "ES256",
+            "jwk": try key.publicJWK
+        ]
+        var payload: [String: Any] = [
+            "jti": UUID().uuidString,
+            "htm": method.uppercased(),
+            "htu": url.withoutQuery.absoluteString,
+            "iat": Int(Date().timeIntervalSince1970)
+        ]
+        if let nonce, !nonce.isEmpty { payload["nonce"] = nonce }
+        let encodedHeader = try jsonData(header).base64URLEncoded
+        let encodedPayload = try jsonData(payload).base64URLEncoded
+        let signingInput = Data("\(encodedHeader).\(encodedPayload)".utf8)
+        let signature = try key.sign(signingInput).base64URLEncoded
+        return "\(encodedHeader).\(encodedPayload).\(signature)"
+    }
+
+    private static func jsonData(_ value: [String: Any]) throws -> Data {
+        guard JSONSerialization.isValidJSONObject(value) else { throw DPoPError.signingFailed }
+        return try JSONSerialization.data(withJSONObject: value, options: [.sortedKeys])
+    }
+}
+
+extension URL {
+    var withoutQuery: URL {
+        guard var components = URLComponents(url: self, resolvingAgainstBaseURL: false) else { return self }
+        components.query = nil
+        components.fragment = nil
+        return components.url ?? self
     }
 }

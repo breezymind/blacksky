@@ -63,13 +63,26 @@ final class AppModel: ObservableObject {
                 authState = .loggedOut(message: nil)
                 return
             }
-            guard !stored.isExpired else {
+            guard stored.canUseDPoP else {
                 try? credentialStore.delete()
-                authState = .loggedOut(message: "세션이 만료되었습니다. 다시 로그인해 주세요.")
+                authState = .loggedOut(message: "보안 세션을 새로 설정해야 합니다. 다시 로그인해 주세요.")
                 return
             }
-            session = stored
-            handleInput = stored.handle
+            let restored: OAuthSession
+            if stored.isExpired {
+                do {
+                    restored = try await oauth.refresh(session: stored)
+                    try credentialStore.save(restored)
+                } catch {
+                    try? credentialStore.delete()
+                    authState = .loggedOut(message: "로그인 세션이 만료되었습니다. 다시 로그인해 주세요.")
+                    return
+                }
+            } else {
+                restored = stored
+            }
+            session = restored
+            handleInput = restored.handle
             authState = .authenticated
         } catch {
             authState = .loggedOut(message: "저장된 세션을 복원하지 못했습니다. 다시 로그인해 주세요.")

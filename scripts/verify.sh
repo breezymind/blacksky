@@ -97,7 +97,10 @@ contains blacksky/Views/LoginView.swift 'Bluesky 핸들'
 contains blacksky/Views/LoginView.swift 'Bluesky로 로그인'
 contains blacksky/Services/OAuthService.swift 'OAuthClientConfiguration'
 contains blacksky/Services/OAuthService.swift 'blacksky://oauth/callback'
-contains blacksky/Services/OAuthService.swift 'stateMismatch'
+contains blacksky/Services/OAuthService.swift 'pushed_authorization_request_endpoint'
+contains blacksky/Services/OAuthService.swift 'DPoPProofBuilder'
+contains blacksky/Services/OAuthService.swift 'code_challenge_method'
+contains blacksky/Services/OAuthService.swift 'authorization_servers'
 contains blacksky/App/BlackskyApp.swift '.onOpenURL'
 contains blacksky/App/AppModel.swift 'restoreSession()'
 contains blacksky/App/AppModel.swift 'stored.isExpired'
@@ -136,6 +139,15 @@ if grep -R -E 'app\.bsky\.(feed\.post\.create|feed\.like|feed\.repost|graph\.fol
     echo '검증 실패: 읽기 전용 범위를 벗어난 Bluesky API 호출을 찾았습니다.' >&2
     exit 1
 fi
+if grep -R -E 'https://bsky\.social/oauth/(authorize|token|par)' blacksky >/dev/null; then
+    echo '검증 실패: OAuth endpoint를 하드코딩했습니다.' >&2
+    exit 1
+fi
+if grep -Fq 'setValue("Bearer ' blacksky/Services/BlueskyAPI.swift; then
+    echo '검증 실패: PDS 요청이 Bearer 인증을 사용합니다.' >&2
+    exit 1
+fi
+contains blacksky/Services/BlueskyAPI.swift 'setValue("DPoP \(session.accessToken)'
 
 printf '%s\n' '== SQLite issue-store architecture checks =='
 tmp_dir="$(mktemp -d)"
@@ -149,7 +161,7 @@ const fs = require('fs');
 const issues = JSON.parse(fs.readFileSync(process.env.ISSUES_JSON, 'utf8')).issues ?? [];
 const architecture = JSON.parse(fs.readFileSync(process.env.ARCHITECTURE_JSON, 'utf8')).documents ?? [];
 const issueByID = new Map(issues.map(issue => [issue.issue_id, issue]));
-const requiredIssues = ['T-001', 'T-002', 'T-003', 'T-004', 'T-005', 'T-006', 'T-007', 'T-008'];
+const requiredIssues = ['T-001', 'T-002', 'T-003', 'T-004', 'T-005', 'T-006', 'T-007', 'T-008', 'T-009'];
 const missingIssues = requiredIssues.filter(id => !issueByID.has(id));
 if (missingIssues.length) {
     throw new Error(`필수 issue-store 이슈 누락: ${missingIssues.join(', ')}`);
@@ -162,6 +174,9 @@ for (const id of requiredIssues.slice(1)) {
 if (issueByID.get('T-008').status !== 'done') {
     throw new Error(`T-008 상태가 done이 아닙니다: ${issueByID.get('T-008').status}`);
 }
+if (issueByID.get('T-009').status !== 'done') {
+    throw new Error(`T-009 상태가 done이 아닙니다: ${issueByID.get('T-009').status}`);
+}
 
 const documentByPath = new Map(architecture.map(document => [document.source_path, document]));
 const adr = documentByPath.get('adr/0001-oauth-callback-and-client-config');
@@ -172,7 +187,12 @@ if (!adr || !context) {
 for (const term of ['blacksky://oauth/callback', 'client metadata', 'Keychain']) {
     if (!adr.body.includes(term)) throw new Error(`ADR에 '${term}' 근거가 없습니다.`);
 }
-for (const term of ['읽기 전용 MVP', 'app.bsky.feed.getTimeline', 'app.bsky.graph.getFollows', 'URI', 'DID']) {
+const dpopADR = documentByPath.get('adr/0002-dpop-key-protection');
+if (!dpopADR) throw new Error('DPoP 보호 ADR이 누락되었습니다.');
+for (const term of ['Secure Enclave', 'Keychain', 'nonce']) {
+    if (!dpopADR.body.includes(term)) throw new Error(`DPoP ADR에 '${term}' 근거가 없습니다.`);
+}
+for (const term of ['읽기 전용 MVP', 'app.bsky.feed.getTimeline', 'app.bsky.graph.getFollows', 'URI', 'DID', 'DPoP']) {
     if (!context.body.includes(term)) throw new Error(`context/main에 '${term}' 용어가 없습니다.`);
 }
 NODE

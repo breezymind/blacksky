@@ -17,6 +17,7 @@ struct URLSessionHTTPClient: HTTPClient {
 
 enum BlueskyAPIError: Error, Equatable, LocalizedError, Sendable {
     case unauthorized
+    case missingDPoPKey
     case httpStatus(Int)
     case malformedURL
     case invalidResponse
@@ -25,7 +26,7 @@ enum BlueskyAPIError: Error, Equatable, LocalizedError, Sendable {
 
     var errorDescription: String? {
         switch self {
-        case .unauthorized: return "세션이 만료되었습니다. 다시 로그인해 주세요."
+        case .unauthorized, .missingDPoPKey: return "세션이 만료되었습니다. 다시 로그인해 주세요."
         case .httpStatus: return "네트워크 오류가 발생했습니다."
         case .malformedURL, .invalidResponse, .decoding: return "응답을 읽을 수 없습니다."
         case .transport: return "네트워크 오류가 발생했습니다."
@@ -33,13 +34,30 @@ enum BlueskyAPIError: Error, Equatable, LocalizedError, Sendable {
     }
 }
 
+private final class DPoPNonceStore: @unchecked Sendable {
+    private let lock = NSLock()
+    private var values: [String: String] = [:]
+
+    func value(for url: URL) -> String? {
+        lock.lock(); defer { lock.unlock() }
+        return values[url.originKey]
+    }
+
+    func set(_ nonce: String?, for url: URL) {
+        lock.lock(); defer { lock.unlock() }
+        if let nonce, !nonce.isEmpty { values[url.originKey] = nonce }
+    }
+}
+
 struct BlueskyAPIClient: BlueskyAPI, Sendable {
     private let httpClient: any HTTPClient
     private let decoder: JSONDecoder
+    private let nonceStore: DPoPNonceStore
 
     init(httpClient: any HTTPClient = URLSessionHTTPClient()) {
         self.httpClient = httpClient
         self.decoder = JSONDecoder()
+        self.nonceStore = DPoPNonceStore()
     }
 
     func getTimeline(session: OAuthSession, cursor: String? = nil) async throws -> FeedPage {
@@ -62,29 +80,47 @@ struct BlueskyAPIClient: BlueskyAPI, Sendable {
     }
 
     private func get<Response: Decodable>(url: URL, session: OAuthSession) async throws -> Response {
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("Bearer \(session.accessToken)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        guard let key = session.dpopKey else { throw BlueskyAPIError.missingDPoPKey }
+        var nonce = nonceStore.value(for: session.pdsURL) ?? session.resourceServerNonce
 
         do {
-            let (data, response) = try await httpClient.send(request)
-            guard let httpResponse = response as? HTTPURLResponse else {
-                throw BlueskyAPIError.invalidResponse
+            for attempt in 0..<2 {
+                var request = URLRequest(url: url)
+                request.httpMethod = "GET"
+                request.setValue("DPoP \(session.accessToken)", forHTTPHeaderField: "Authorization")
+                request.setValue("application/json", forHTTPHeaderField: "Accept")
+                let proof = try DPoPProofBuilder.make(key: key, method: "GET", url: url, nonce: nonce)
+                request.setValue(proof, forHTTPHeaderField: "DPoP")
+
+                let (data, response) = try await httpClient.send(request)
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    throw BlueskyAPIError.invalidResponse
+                }
+                let responseNonce = httpResponse.value(forHTTPHeaderField: "DPoP-Nonce")
+                if httpResponse.statusCode == 401, attempt == 0,
+                   let responseNonce, !responseNonce.isEmpty {
+                    nonce = responseNonce
+                    nonceStore.set(responseNonce, for: session.pdsURL)
+                    continue
+                }
+                guard (200..<300).contains(httpResponse.statusCode) else {
+                    if httpResponse.statusCode == 401 { throw BlueskyAPIError.unauthorized }
+                    throw BlueskyAPIError.httpStatus(httpResponse.statusCode)
+                }
+                nonceStore.set(responseNonce, for: session.pdsURL)
+                do {
+                    return try decoder.decode(Response.self, from: data)
+                } catch {
+                    throw BlueskyAPIError.decoding(error.localizedDescription)
+                }
             }
-            guard (200..<300).contains(httpResponse.statusCode) else {
-                if httpResponse.statusCode == 401 { throw BlueskyAPIError.unauthorized }
-                throw BlueskyAPIError.httpStatus(httpResponse.statusCode)
-            }
-            do {
-                return try decoder.decode(Response.self, from: data)
-            } catch {
-                throw BlueskyAPIError.decoding(error.localizedDescription)
-            }
+            throw BlueskyAPIError.unauthorized
         } catch let error as BlueskyAPIError {
             throw error
         } catch is CancellationError {
             throw CancellationError()
+        } catch let error as DPoPError {
+            throw BlueskyAPIError.transport(error.localizedDescription)
         } catch {
             throw BlueskyAPIError.transport(error.localizedDescription)
         }
@@ -98,6 +134,13 @@ struct BlueskyAPIClient: BlueskyAPI, Sendable {
         components.queryItems = query.filter { $0.value != nil }
         guard let url = components.url else { throw BlueskyAPIError.malformedURL }
         return url
+    }
+}
+
+private extension URL {
+    var originKey: String {
+        if let host, let scheme { return "\(scheme)://\(host):\(port ?? (scheme == "https" ? 443 : 80))" }
+        return absoluteString
     }
 }
 
