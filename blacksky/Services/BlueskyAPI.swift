@@ -89,7 +89,13 @@ struct BlueskyAPIClient: BlueskyAPI, Sendable {
                 request.httpMethod = "GET"
                 request.setValue("DPoP \(session.accessToken)", forHTTPHeaderField: "Authorization")
                 request.setValue("application/json", forHTTPHeaderField: "Accept")
-                let proof = try DPoPProofBuilder.make(key: key, method: "GET", url: url, nonce: nonce)
+                let proof = try DPoPProofBuilder.make(
+                    key: key,
+                    method: "GET",
+                    url: url,
+                    nonce: nonce,
+                    accessToken: session.accessToken
+                )
                 request.setValue(proof, forHTTPHeaderField: "DPoP")
 
                 let (data, response) = try await httpClient.send(request)

@@ -236,7 +236,8 @@ enum DPoPProofBuilder {
         key: DPoPKeyMaterial,
         method: String,
         url: URL,
-        nonce: String?
+        nonce: String?,
+        accessToken: String? = nil
     ) throws -> String {
         let header: [String: Any] = [
             "typ": "dpop+jwt",
@@ -250,6 +251,9 @@ enum DPoPProofBuilder {
             "iat": Int(Date().timeIntervalSince1970)
         ]
         if let nonce, !nonce.isEmpty { payload["nonce"] = nonce }
+        if let accessToken {
+            payload["ath"] = SHA256.hash(data: Data(accessToken.utf8)).withUnsafeBytes { Data($0).base64URLEncoded }
+        }
         let encodedHeader = try jsonData(header).base64URLEncoded
         let encodedPayload = try jsonData(payload).base64URLEncoded
         let signingInput = Data("\(encodedHeader).\(encodedPayload)".utf8)

@@ -1,3 +1,4 @@
+import CryptoKit
 import Foundation
 import XCTest
 @testable import blacksky
@@ -115,6 +116,22 @@ final class BlackskyTests: XCTestCase {
         let schemes = urlTypes.flatMap { $0["CFBundleURLSchemes"] as? [String] ?? [] }
         XCTAssertTrue(schemes.contains("io.github.breezymind"))
         XCTAssertEqual(OAuthClientConfiguration.development.redirectURI.absoluteString, "io.github.breezymind:/oauth/callback")
+    }
+
+    func testPDSDPoPProofBindsAccessToken() async throws {
+        let client = RecordingHTTPClient(payload: Data(#"{"cursor":null,"feed":[]}"#.utf8))
+        _ = try await BlueskyAPIClient(httpClient: client).getTimeline(session: makeSession())
+        let requestValue = await client.lastRequest
+        let request = try XCTUnwrap(requestValue)
+        let proof = try XCTUnwrap(request.value(forHTTPHeaderField: "DPoP"))
+        let parts = proof.split(separator: ".")
+        XCTAssertEqual(parts.count, 3)
+        let encodedPayload = String(parts[1])
+        let paddedPayload = encodedPayload + String(repeating: "=", count: (4 - encodedPayload.count % 4) % 4)
+        let payloadData = try XCTUnwrap(Data(base64Encoded: paddedPayload.replacingOccurrences(of: "-", with: "+").replacingOccurrences(of: "_", with: "/")))
+        let payload = try XCTUnwrap(try JSONSerialization.jsonObject(with: payloadData) as? [String: Any])
+        XCTAssertNotNil(payload["ath"] as? String)
+        XCTAssertEqual(request.value(forHTTPHeaderField: "Authorization"), "DPoP access-token-for-test")
     }
 
     @MainActor

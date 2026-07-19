@@ -102,6 +102,7 @@ contains blacksky/Services/OAuthService.swift 'pushed_authorization_request_endp
 contains blacksky/Services/OAuthService.swift 'DPoPProofBuilder'
 contains blacksky/Services/OAuthService.swift 'code_challenge_method'
 contains blacksky/Services/OAuthService.swift 'authorization_servers'
+contains blacksky/Domain/Models.swift 'payload["ath"]'
 contains blacksky/App/BlackskyApp.swift '.onOpenURL'
 contains blacksky/App/AppModel.swift 'restoreSession()'
 contains blacksky/App/AppModel.swift 'stored.isExpired'
@@ -162,7 +163,7 @@ const fs = require('fs');
 const issues = JSON.parse(fs.readFileSync(process.env.ISSUES_JSON, 'utf8')).issues ?? [];
 const architecture = JSON.parse(fs.readFileSync(process.env.ARCHITECTURE_JSON, 'utf8')).documents ?? [];
 const issueByID = new Map(issues.map(issue => [issue.issue_id, issue]));
-const requiredIssues = ['T-001', 'T-002', 'T-003', 'T-004', 'T-005', 'T-006', 'T-007', 'T-008', 'T-009'];
+const requiredIssues = ['T-001', 'T-002', 'T-003', 'T-004', 'T-005', 'T-006', 'T-007', 'T-008', 'T-009', 'T-010', 'T-011'];
 const missingIssues = requiredIssues.filter(id => !issueByID.has(id));
 if (missingIssues.length) {
     throw new Error(`필수 issue-store 이슈 누락: ${missingIssues.join(', ')}`);
@@ -177,6 +178,11 @@ if (issueByID.get('T-008').status !== 'done') {
 }
 if (issueByID.get('T-009').status !== 'done') {
     throw new Error(`T-009 상태가 done이 아닙니다: ${issueByID.get('T-009').status}`);
+}
+for (const id of ['T-010', 'T-011']) {
+    if (issueByID.get(id).status !== 'done') {
+        throw new Error(`${id} 상태가 done이 아닙니다: ${issueByID.get(id).status}`);
+    }
 }
 
 const documentByPath = new Map(architecture.map(document => [document.source_path, document]));
