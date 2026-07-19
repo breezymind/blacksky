@@ -1,0 +1,17 @@
+{
+  "client_id": "https://breezymind.github.io/blacksky/oauth-client-metadata.json",
+  "application_type": "native",
+  "redirect_uris": [
+    "blacksky://oauth/callback"
+  ],
+  "grant_types": [
+    "authorization_code",
+    "refresh_token"
+  ],
+  "response_types": [
+    "code"
+  ],
+  "scope": "atproto transition:generic",
+  "dpop_bound_access_tokens": true,
+  "token_endpoint_auth_method": "none"
+}
