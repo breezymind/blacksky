@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Blacksky Updates</title>
+    <description>Latest updates for Blacksky — a Bluesky client for macOS</description>
+    <language>en</language>
+    <link>https://breezymind.github.io/blacksky/appcast.xml</link>
+    <item>
+      <title>Version 1.0.1</title>
+      <description><![CDATA[## What's New in 1.0.1
+
+- 댓글이 10개이상은 안보이던 문제해결
+- 리포스트, 하트 등 롤오버시 딜레이타임을 1초로 줄임
+
+-
+-
+-]]></description>
+      <pubDate>Fri, 24 Jul 2026 01:39:02 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.1</sparkle:version>
+      <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.1/blacksky-1.0.1.dmg"
+        length="209640808"
+        type="application/octet-stream"
+        sparkle:edSignature="jjz6g77LQcbC6V+GKSgaM3tT8sAGWl8A6XYqzpErzlXY7Z+sRZSVC9/C91NGUkDl9ICavjLO8adZUQ0/1n0MCA=="
+      />
+    </item>
+
+  </channel>
+</rss>
