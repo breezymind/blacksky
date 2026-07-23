@@ -1,7 +1,0 @@
-{
-  "name": "blacksky",
-  "private": true,
-  "scripts": {
-    "test": "bash scripts/verify.sh"
-  }
-}
