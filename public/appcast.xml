@@ -66,5 +66,21 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.5</title>
+      <description><![CDATA[- 캐시 추가 및 응답없음 문제 해결]]></description>
+      <pubDate>Fri, 24 Jul 2026 13:10:14 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.5</sparkle:version>
+      <sparkle:shortVersionString>1.0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.5/blacksky-1.0.5.dmg"
+        length="210096531"
+        type="application/octet-stream"
+        sparkle:edSignature="vadxTC2AgHZjbe8sdsTUQjWObj7aZDmUfSrCweUGNkSUmep99vOZF5Rswnhj3vHg+dMZuk8y8scOGkGg9rp8Aw=="
+      />
+    </item>
+
   </channel>
 </rss>
