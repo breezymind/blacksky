@@ -48,5 +48,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.3</title>
+      <description><![CDATA[## What's New in 1.0.3
+
+- 앱 안정성 보완]]></description>
+      <pubDate>Fri, 24 Jul 2026 11:35:13 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.3</sparkle:version>
+      <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.3/blacksky-1.0.3.dmg"
+        length="209792277"
+        type="application/octet-stream"
+        sparkle:edSignature="8i60R3rgKX5LnPUmsF3HylrwydwSBZGjJLRHWwliQfq2uWWEY9oQzXeySN9u3loYbiHaxBfl2VMhUowEenqYAQ=="
+      />
+    </item>
+
   </channel>
 </rss>
