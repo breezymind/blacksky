@@ -101,5 +101,24 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.7</title>
+      <description><![CDATA[## What's New in 1.0.7
+
+- 욕설, 혐오 표현 추가 ML 학습
+- 앱 안정성 보완]]></description>
+      <pubDate>Fri, 24 Jul 2026 23:41:21 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.7</sparkle:version>
+      <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.7/blacksky-1.0.7.dmg"
+        length="209918883"
+        type="application/octet-stream"
+        sparkle:edSignature="Ex7uPqtS9pftVYgfAp6b+PR46selK3faBNqgS1oCXXilbKC1Ng39kgXn7HD8wLfAFM2EUXr2XXgRWp57Vnw/Ag=="
+      />
+    </item>
+
   </channel>
 </rss>
