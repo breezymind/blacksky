@@ -82,5 +82,24 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.6</title>
+      <description><![CDATA[## What's New in 1.0.6
+
+- 피드 캐시 추가
+- 스크롤 중 응답없음 문제 해결]]></description>
+      <pubDate>Fri, 24 Jul 2026 13:18:38 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.6</sparkle:version>
+      <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.6/blacksky-1.0.6.dmg"
+        length="209667301"
+        type="application/octet-stream"
+        sparkle:edSignature="BpCa5ZIWBJRMfxiCpyuqd9FYQrZZVPUAakXJlCrmEvqPjbZVW4vqnYlYdyNKiBzKRX9rTVEQWCPzw15G16bGCw=="
+      />
+    </item>
+
   </channel>
 </rss>
