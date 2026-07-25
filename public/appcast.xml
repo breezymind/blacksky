@@ -267,5 +267,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.21</title>
+      <description><![CDATA[## What's New in 1.0.21
+
+- CoreML 이 앱 시작을 늦추는 문제를 해결]]></description>
+      <pubDate>Sun, 26 Jul 2026 04:51:25 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.21</sparkle:version>
+      <sparkle:shortVersionString>1.0.21</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.21/blacksky-1.0.21.dmg"
+        length="213308154"
+        type="application/octet-stream"
+        sparkle:edSignature="CbCkvkWOEsewObdzFiEBErg8dKQU7bY02b/p8KtdDhVkvYLfTvV7GLdIwsZmka2U0uCBf3CgzPyo+GbYJ05GCA=="
+      />
+    </item>
+
   </channel>
 </rss>
