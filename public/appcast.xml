@@ -248,5 +248,24 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.19</title>
+      <description><![CDATA[## What's New in 1.0.19
+
+- 블라인드 필더 수치 조정
+- 검색 기능 추가]]></description>
+      <pubDate>Sun, 26 Jul 2026 01:38:16 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.19</sparkle:version>
+      <sparkle:shortVersionString>1.0.19</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.19/blacksky-1.0.19.dmg"
+        length="213110751"
+        type="application/octet-stream"
+        sparkle:edSignature="RgW4UcCb+q73bPg45aOmLmdlerjnvB+WFjhKtAVw2laXxWahaXlWeeOWcoOZ2wL28X7OJ3LBsdk9OzedWAyGDQ=="
+      />
+    </item>
+
   </channel>
 </rss>
