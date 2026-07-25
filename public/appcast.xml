@@ -230,5 +230,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.18</title>
+      <description><![CDATA[## What's New in 1.0.18
+
+- 입력 버그 수정 ]]></description>
+      <pubDate>Sat, 25 Jul 2026 17:55:42 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.18</sparkle:version>
+      <sparkle:shortVersionString>1.0.18</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.18/blacksky-1.0.18.dmg"
+        length="212729725"
+        type="application/octet-stream"
+        sparkle:edSignature="UG52Lh6X7UZ3kRDIfaUrjT7mL5Yg7m/iI8jlyBtDPRE202hTJ5jkg6KB+yzLCQ1Mu7ZIU/NQpWbVQUbZJbtCDg=="
+      />
+    </item>
+
   </channel>
 </rss>
