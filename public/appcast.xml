@@ -212,5 +212,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.16</title>
+      <description><![CDATA[## What's New in 1.0.16
+
+- 글쓰기시에 한글입력이 씹히는 문제 해결]]></description>
+      <pubDate>Sat, 25 Jul 2026 17:11:51 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.16</sparkle:version>
+      <sparkle:shortVersionString>1.0.16</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.16/blacksky-1.0.16.dmg"
+        length="212689026"
+        type="application/octet-stream"
+        sparkle:edSignature="sqaobTjcQ6b5vOFF0FCFNa83JH7KVubmdP/EbQOAzCUfTbp+1pV4YlHH2dI5ebBNmAFMbZrOsj+QXNOzv6l9Bg=="
+      />
+    </item>
+
   </channel>
 </rss>
