@@ -375,5 +375,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.27</title>
+      <description><![CDATA[## What's New in 1.0.27
+
+- 해시태그 기능 추가]]></description>
+      <pubDate>Sun, 26 Jul 2026 14:00:04 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.27</sparkle:version>
+      <sparkle:shortVersionString>1.0.27</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.27/blacksky-1.0.27.dmg"
+        length="213124230"
+        type="application/octet-stream"
+        sparkle:edSignature="BCoE6tRDuMWBOynHoYzoTPcTUF811+DkSfO3Kx5vXzpchTcFPY/v4sUrGjVVwSNf8widTFWVz3WiwRigzxOvDw=="
+      />
+    </item>
+
   </channel>
 </rss>
