@@ -357,5 +357,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.26</title>
+      <description><![CDATA[## What's New in 1.0.26
+
+- SwiftUI View Graph 반복 갱신]]></description>
+      <pubDate>Sun, 26 Jul 2026 12:02:49 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.26</sparkle:version>
+      <sparkle:shortVersionString>1.0.26</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.26/blacksky-1.0.26.dmg"
+        length="213048510"
+        type="application/octet-stream"
+        sparkle:edSignature="icUpZNs0ruD9YEk+OXFdh52gKlORr4k84OQfDzsfes1mEd5mP5LGJCjWahq1qPdkuOgDDOE6ixUpAvo4ZinhCg=="
+      />
+    </item>
+
   </channel>
 </rss>
