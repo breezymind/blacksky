@@ -412,5 +412,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.29</title>
+      <description><![CDATA[## What's New in 1.0.29
+
+- ML 모델 개선]]></description>
+      <pubDate>Mon, 27 Jul 2026 00:35:17 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.29</sparkle:version>
+      <sparkle:shortVersionString>1.0.29</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.29/blacksky-1.0.29.dmg"
+        length="213264407"
+        type="application/octet-stream"
+        sparkle:edSignature="dOG29+a6d9+ucTSqyBDmOAO/tsNEnkkEQZhJSv+FGL8yCHGRmCPeTgTXT17D6Lhbnj0QDjuJhk+XjyTZFSftAw=="
+      />
+    </item>
+
   </channel>
 </rss>
