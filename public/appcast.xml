@@ -485,5 +485,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.34</title>
+      <description><![CDATA[## What's New in 1.0.34
+
+- 업데이트 문제 해결]]></description>
+      <pubDate>Mon, 27 Jul 2026 22:33:06 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>35</sparkle:version>
+      <sparkle:shortVersionString>1.0.34</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.34/blacksky-1.0.34.dmg"
+        length="213480982"
+        type="application/octet-stream"
+        sparkle:edSignature="DA+q++yjw5uF70vKyzTrVlmCkHFNbZCnHNoSG6TC0C6Gmw0BbzJlMfX5TZjmGN1YHh+0PMMpdXyx7wXSF3yxCg=="
+      />
+    </item>
+
   </channel>
 </rss>
