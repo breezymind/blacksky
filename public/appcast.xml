@@ -539,5 +539,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.38</title>
+      <description><![CDATA[## What's New in 1.0.38
+
+- UI / UX 개선]]></description>
+      <pubDate>Tue, 28 Jul 2026 01:09:18 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>39</sparkle:version>
+      <sparkle:shortVersionString>1.0.38</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.38/blacksky-1.0.38.dmg"
+        length="213506436"
+        type="application/octet-stream"
+        sparkle:edSignature="hvx2odfdHjZQ/Qt1CeMGKqkbBUi5u7uBxF87wP2lbwM6IPGq6UxSPsiG2WdryNS7nDSN5AmGh8/92pND9b89DA=="
+      />
+    </item>
+
   </channel>
 </rss>
