@@ -448,5 +448,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.31</title>
+      <description><![CDATA[## What's New in 1.0.31
+
+- 업데이트 기능 및 판정 필터 개선]]></description>
+      <pubDate>Mon, 27 Jul 2026 19:35:57 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>32</sparkle:version>
+      <sparkle:shortVersionString>1.0.31</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.31/blacksky-1.0.31.dmg"
+        length="213346076"
+        type="application/octet-stream"
+        sparkle:edSignature="Uq6hdDdeEHIOxcZRPK28KQmdQHqEcUH8E0HzPExhrjX9g65hQqMS271BV/7Z6tsucBEU451tVV83DOXES4ZsCg=="
+      />
+    </item>
+
   </channel>
 </rss>
