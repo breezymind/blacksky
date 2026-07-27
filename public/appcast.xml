@@ -430,5 +430,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.30</title>
+      <description><![CDATA[## What's New in 1.0.30
+
+- 검색어 모아보기 기능 추가]]></description>
+      <pubDate>Mon, 27 Jul 2026 17:16:31 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>1.0.30</sparkle:version>
+      <sparkle:shortVersionString>1.0.30</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.30/blacksky-1.0.30.dmg"
+        length="213284903"
+        type="application/octet-stream"
+        sparkle:edSignature="WNkpdAO6hA25aRSh6RKS4ZpDVLlZ15QIyEyHAWV6OYJt/2x3pFkZY/3+TErWC7kdcWdSWVQeWLRmz2y7TOMxDw=="
+      />
+    </item>
+
   </channel>
 </rss>
