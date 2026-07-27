@@ -503,5 +503,41 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.35</title>
+      <description><![CDATA[## What's New in 1.0.35
+
+- UI/UX 개선]]></description>
+      <pubDate>Mon, 27 Jul 2026 23:23:58 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>36</sparkle:version>
+      <sparkle:shortVersionString>1.0.35</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.35/blacksky-1.0.35.dmg"
+        length="213674420"
+        type="application/octet-stream"
+        sparkle:edSignature="AKqk/efxezgT2wk1sVT3QuBlvdWPpZ3KtdK9yUXbC12PL7sakEg8ohPel1EGA5z8V6h13Yyj5Y6HJSW0ADHyAw=="
+      />
+    </item>
+
+    <item>
+      <title>Version 1.0.37</title>
+      <description><![CDATA[## What's New in 1.0.37
+
+- UI / UX 개선]]></description>
+      <pubDate>Tue, 28 Jul 2026 00:35:22 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>38</sparkle:version>
+      <sparkle:shortVersionString>1.0.37</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.37/blacksky-1.0.37.dmg"
+        length="213503679"
+        type="application/octet-stream"
+        sparkle:edSignature="4YmdvkprKNVn8cZtPP08rDR33tGL0Zwf5dnWQnwb6FAFZ4+7qy1xX7Q46Ymqp2XXpQ2qpw449Ti+Or9tZ5rAAQ=="
+      />
+    </item>
+
   </channel>
 </rss>
