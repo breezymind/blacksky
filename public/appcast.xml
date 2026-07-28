@@ -611,5 +611,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.42</title>
+      <description><![CDATA[## What's New in 1.0.42
+
+- UI.UX 개선]]></description>
+      <pubDate>Tue, 28 Jul 2026 15:38:03 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>43</sparkle:version>
+      <sparkle:shortVersionString>1.0.42</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.42/blacksky-1.0.42.dmg"
+        length="213599086"
+        type="application/octet-stream"
+        sparkle:edSignature="OrMiXbQm6GaB8e8V1eAguw6h0e1zzYHaujEvvpc9TnFZvA+H9xZLPalJJzDNb25SdJZKYMNZP1AFxcq2vDglAg=="
+      />
+    </item>
+
   </channel>
 </rss>
