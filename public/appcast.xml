@@ -629,5 +629,24 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.43</title>
+      <description><![CDATA[## What's New in 1.0.43
+
+- 테마 설정 추가
+- 블라인드 종류 설정 추가]]></description>
+      <pubDate>Tue, 28 Jul 2026 22:20:08 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>44</sparkle:version>
+      <sparkle:shortVersionString>1.0.43</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.43/blacksky-1.0.43.dmg"
+        length="214235148"
+        type="application/octet-stream"
+        sparkle:edSignature="8oWCk0QEcKa5yFbiCPBKUpSVItp09evCccZeSBm4yhbNilShl2WD+zvlxpFYOyNiUY6BshedhsAF9e+ZgKGNDg=="
+      />
+    </item>
+
   </channel>
 </rss>
