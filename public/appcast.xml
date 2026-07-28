@@ -593,5 +593,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.41</title>
+      <description><![CDATA[## What's New in 1.0.41
+
+- ML 필터 민감도 설정]]></description>
+      <pubDate>Tue, 28 Jul 2026 12:07:28 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>42</sparkle:version>
+      <sparkle:shortVersionString>1.0.41</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.41/blacksky-1.0.41.dmg"
+        length="213728595"
+        type="application/octet-stream"
+        sparkle:edSignature="+CIHC2TDWCoKDAnjD6jMfSeXYnqfpcaw4T+nL2ygSBZCwF9rJj8EQ8D316I3xPm9IIBL/DaffFCtfGNQUgeOBg=="
+      />
+    </item>
+
   </channel>
 </rss>
