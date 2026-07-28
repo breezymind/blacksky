@@ -35,8 +35,8 @@ show_help() {
   # 3. Draft 확인 후 퍼블리시
   gh release edit v1.0 --repo breezymind/blacksky --draft=false
 
-  # 4. appcast.xml 푸시
-  git add public/appcast.xml && git commit -m "Update appcast for v1.0" && git push
+  # 4. Draft 공개 후 asset/appcast 검증과 appcast push
+  SPARKLE_BUILD_VERSION=45 ./scripts/publish.sh 1.0
 
   GitHub Pages가 자동 배포되면 앱이
   https://breezymind.github.io/blacksky/appcast.xml을 통해 새 버전을 감지하고
@@ -230,10 +230,12 @@ echo "==> 서명: ${ED_SIGNATURE:0:40}..."
 # ============================================================
 echo "==> GitHub Release 생성 중 ($TAG)..."
 
-# Check if release already exists
+# 기존 릴리스는 삭제하지 않는다. 중단된 작업은 pipeline의 --resume으로
+# 복구해야 하며, 같은 tag를 덮어써서 공개 artifact를 훼손하면 안 된다.
 if gh release view "$TAG" --repo "$REPO" &>/dev/null; then
-  echo "==> 기존 릴리스 $TAG 삭제 후 재생성..."
-  gh release delete "$TAG" --repo "$REPO" --yes
+  echo "오류: 이미 존재하는 GitHub Release입니다: $TAG" >&2
+  echo "  기존 릴리스는 삭제하지 말고 pipeline-release.sh --resume $VERSION 을 사용하세요." >&2
+  exit 1
 fi
 
 # Create release (draft first for safety)
@@ -267,7 +269,6 @@ NEW_ITEM=$(cat <<ITEMEOF
       <title>Version $VERSION</title>
       <description><![CDATA[$RELEASE_NOTES]]></description>
       <pubDate>$PUB_DATE</pubDate>
-      <sparkle:channel>release</sparkle:channel>
       <sparkle:version>$SPARKLE_BUILD_VERSION</sparkle:version>
       <sparkle:shortVersionString>$VERSION</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>$MIN_OS</sparkle:minimumSystemVersion>
@@ -353,10 +354,8 @@ echo ""
 echo "2. 릴리스 퍼블리시:"
 echo "   gh release edit $TAG --repo $REPO --draft=false"
 echo ""
-echo "3. appcast.xml 커밋 & 푸시:"
-echo "   git add public/appcast.xml"
-echo "   git commit -m \"Update appcast for $TAG\""
-echo "   git push"
+echo "3. 공개 asset/appcast 검증 후 appcast 커밋 & 푸시:"
+echo "   SPARKLE_BUILD_VERSION=$SPARKLE_BUILD_VERSION ./scripts/publish.sh $VERSION"
 echo ""
 echo "GitHub Pages 자동 배포 후 업데이트 URL:"
 echo "  https://breezymind.github.io/blacksky/appcast.xml"
