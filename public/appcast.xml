@@ -654,7 +654,6 @@
 
 - 안정성 추가]]></description>
       <pubDate>Tue, 28 Jul 2026 22:43:29 +0900</pubDate>
-      <sparkle:channel>release</sparkle:channel>
       <sparkle:version>45</sparkle:version>
       <sparkle:shortVersionString>1.0.44</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
