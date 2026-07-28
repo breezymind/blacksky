@@ -648,5 +648,23 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.44</title>
+      <description><![CDATA[## What's New in 1.0.44
+
+- 안정성 추가]]></description>
+      <pubDate>Tue, 28 Jul 2026 22:43:29 +0900</pubDate>
+      <sparkle:channel>release</sparkle:channel>
+      <sparkle:version>45</sparkle:version>
+      <sparkle:shortVersionString>1.0.44</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.44/blacksky-1.0.44.dmg"
+        length="214236599"
+        type="application/octet-stream"
+        sparkle:edSignature="ZE8kG0AqDGf/ASCsXc+X+UQz3uUplG9Ze+vKEPp/NWiTisnFlR5QCKLgFvgKJNS0WiUvJi3v2Ramn9FD9gPuDw=="
+      />
+    </item>
+
   </channel>
 </rss>
