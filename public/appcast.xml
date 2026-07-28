@@ -665,5 +665,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.45</title>
+      <description><![CDATA[- 설정 > 폰트크기 수정 추가]]></description>
+      <pubDate>Wed, 29 Jul 2026 02:14:05 +0900</pubDate>
+      <sparkle:version>46</sparkle:version>
+      <sparkle:shortVersionString>1.0.45</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.45/blacksky-1.0.45.dmg"
+        length="215233907"
+        type="application/octet-stream"
+        sparkle:edSignature="3jxzt2tAI74gyZIVV8g80+zBQfgo1OBJzXts0olzQp6rB39HDnJBdrEUBzPDVSN0WLi26kUUgokaqcfw7rf5Cw=="
+      />
+    </item>
+
   </channel>
 </rss>
