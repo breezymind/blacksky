@@ -50,7 +50,9 @@ git -C "$REPO_ROOT" remote get-url "$REMOTE" >/dev/null 2>&1 || fail "release re
 [[ "$(git -C "$REPO_ROOT" branch --show-current)" == "$BRANCH" ]] || fail "release repo branch가 $BRANCH가 아닙니다."
 git -C "$REPO_ROOT" ls-remote --exit-code "$REMOTE" "refs/heads/$BRANCH" >/dev/null 2>&1 || fail "원격 branch가 없습니다: $REMOTE/$BRANCH"
 while IFS= read -r changed; do
-  [[ -z "$changed" || "$changed" == "public/appcast.xml" ]] || fail "release repo에 unrelated 변경이 있습니다: $changed"
+  [[ -z "$changed" ]] && continue
+  [[ "$changed" == "public/appcast.xml" || "$changed" == release-notes-*.md ]] && continue
+  fail "release repo에 unrelated 변경이 있습니다: $changed"
 done < <(git -C "$REPO_ROOT" status --porcelain | sed -E 's/^.. //')
 
 RELEASE_JSON="$(gh release view "$TAG" --repo "$REPO" --json isDraft,tagName,assets 2>&1)" || fail "GitHub Release 조회 실패: $RELEASE_JSON"
