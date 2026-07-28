@@ -695,5 +695,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.47</title>
+      <description><![CDATA[- 댓글 목록에서 대댓글이 안써지는 문제]]></description>
+      <pubDate>Wed, 29 Jul 2026 03:17:34 +0900</pubDate>
+      <sparkle:version>48</sparkle:version>
+      <sparkle:shortVersionString>1.0.47</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.47/blacksky-1.0.47.dmg"
+        length="215294387"
+        type="application/octet-stream"
+        sparkle:edSignature="7z+KmqOpRHIoSzN44SJCE1DZ/Be4iJl2TI7DfemSoiEjfXdHZuexXMquRxI7VbvGS0Z/dUiQF6oay1YkxRt2Bw=="
+      />
+    </item>
+
   </channel>
 </rss>
