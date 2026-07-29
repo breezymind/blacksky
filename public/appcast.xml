@@ -785,5 +785,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.59</title>
+      <description><![CDATA[- 필민감도 설정 변경]]></description>
+      <pubDate>Wed, 29 Jul 2026 21:20:49 +0900</pubDate>
+      <sparkle:version>60</sparkle:version>
+      <sparkle:shortVersionString>1.0.59</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.59/blacksky-1.0.59.dmg"
+        length="215423855"
+        type="application/octet-stream"
+        sparkle:edSignature="ThTOXhMfiZYBsH5kPbadlUQaDTGDyLhjlLjRj0ELYSul1wYAZ0gGC4abIQvEpRMekO768k40SZ6iEef13VtSCA=="
+      />
+    </item>
+
   </channel>
 </rss>
