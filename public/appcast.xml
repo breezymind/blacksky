@@ -770,5 +770,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.58</title>
+      <description><![CDATA[- 홈피드가 안나오는 문제 해결]]></description>
+      <pubDate>Wed, 29 Jul 2026 20:32:26 +0900</pubDate>
+      <sparkle:version>59</sparkle:version>
+      <sparkle:shortVersionString>1.0.58</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.58/blacksky-1.0.58.dmg"
+        length="215400470"
+        type="application/octet-stream"
+        sparkle:edSignature="Yu5pnNQO1PbzxN+IP+BJmjbBj/4PNQaVwDsb8JnKkXuw1CfoyirpYA4rivPmtfSvHnW+1Jq+inHL/o4OPr2QAQ=="
+      />
+    </item>
+
   </channel>
 </rss>
