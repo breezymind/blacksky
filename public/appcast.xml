@@ -740,5 +740,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.53</title>
+      <description><![CDATA[- 전체 삭제기능 추가 및 안정성 향상]]></description>
+      <pubDate>Wed, 29 Jul 2026 16:40:44 +0900</pubDate>
+      <sparkle:version>54</sparkle:version>
+      <sparkle:shortVersionString>1.0.53</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.53/blacksky-1.0.53.dmg"
+        length="215337587"
+        type="application/octet-stream"
+        sparkle:edSignature="vsksgJTK2gn8J8L0LpXYh/CYab+NoQeOyRrH0Hj+nvH3YLnOV5VFK08io1xqIcbqNdKZUxHwWU7x9YRUWij3Bg=="
+      />
+    </item>
+
   </channel>
 </rss>
