@@ -755,5 +755,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.57</title>
+      <description><![CDATA[- 게시물 삭제 기능 보완]]></description>
+      <pubDate>Wed, 29 Jul 2026 19:29:44 +0900</pubDate>
+      <sparkle:version>58</sparkle:version>
+      <sparkle:shortVersionString>1.0.57</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.57/blacksky-1.0.57.dmg"
+        length="215400280"
+        type="application/octet-stream"
+        sparkle:edSignature="35asaNkSAQWBUhnjB0gTlRneY68xJB/23Eokt1b3U1ZkdzRxY4Mh6J9QG0KJjPV4QIgvE42drkxU7lpGvVAzDw=="
+      />
+    </item>
+
   </channel>
 </rss>
