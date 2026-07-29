@@ -725,5 +725,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.51</title>
+      <description><![CDATA[- 앱이 느려지는 현상을 개했습니다 ]]></description>
+      <pubDate>Wed, 29 Jul 2026 14:20:16 +0900</pubDate>
+      <sparkle:version>52</sparkle:version>
+      <sparkle:shortVersionString>1.0.51</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.51/blacksky-1.0.51.dmg"
+        length="215260020"
+        type="application/octet-stream"
+        sparkle:edSignature="kGIrEnyu3U7gIsXlpDxzw0OTg7ZRyyvIjG2mntmjQUHUZOIwWmdGeA6cdRZmvy4hx6pp6VR2y5crdD10imJmAQ=="
+      />
+    </item>
+
   </channel>
 </rss>
