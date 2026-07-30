@@ -815,5 +815,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.61</title>
+      <description><![CDATA[- 갤러리에서 블라인드 게시물이 늦게 블라인드 처리되는 문제 해결]]></description>
+      <pubDate>Thu, 30 Jul 2026 19:53:53 +0900</pubDate>
+      <sparkle:version>62</sparkle:version>
+      <sparkle:shortVersionString>1.0.61</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.61/blacksky-1.0.61.dmg"
+        length="215523061"
+        type="application/octet-stream"
+        sparkle:edSignature="Sr4w8z5mKVmAH4Q1SyumxMcm+bq8kGdxGk+tCCz8GuxRfuLcc0lWqiXCxQGNJVBsddxIC/thYLt9IlSYaM3/AQ=="
+      />
+    </item>
+
   </channel>
 </rss>
