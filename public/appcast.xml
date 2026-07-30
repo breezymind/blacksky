@@ -800,5 +800,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.60</title>
+      <description><![CDATA[- 필터 설정 변경 및 인용글 표현 개선]]></description>
+      <pubDate>Thu, 30 Jul 2026 17:57:47 +0900</pubDate>
+      <sparkle:version>61</sparkle:version>
+      <sparkle:shortVersionString>1.0.60</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.60/blacksky-1.0.60.dmg"
+        length="215609229"
+        type="application/octet-stream"
+        sparkle:edSignature="aVW+313tCeftnvDHCwyq+NiM2JVOM2Lsd8+T+yXfityNmKAQ+X4h2ysnTw1Wmx6YRtF3ewIJVxUEL5B4et3RDA=="
+      />
+    </item>
+
   </channel>
 </rss>
