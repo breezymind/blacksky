@@ -906,5 +906,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.68</title>
+      <description><![CDATA[- 캐시 추및 설정 개선]]></description>
+      <pubDate>Mon, 03 Aug 2026 01:22:10 +0900</pubDate>
+      <sparkle:version>69</sparkle:version>
+      <sparkle:shortVersionString>1.0.68</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.68/blacksky-1.0.68.dmg"
+        length="218028923"
+        type="application/octet-stream"
+        sparkle:edSignature="B3HJ2eaRruNnhQc7Fgx3fLuB4Hk86rdZoaspL1BDhGQqhmkCATaC9lkvs7GG7gEm2xMNPKOyQUZohqSQfmcwBA=="
+      />
+    </item>
+
   </channel>
 </rss>
