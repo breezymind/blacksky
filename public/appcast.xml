@@ -846,5 +846,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.63</title>
+      <description><![CDATA[- 블라인드 처리시 프로필이미지 가림]]></description>
+      <pubDate>Sun, 02 Aug 2026 18:55:04 +0900</pubDate>
+      <sparkle:version>64</sparkle:version>
+      <sparkle:shortVersionString>1.0.63</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.63/blacksky-1.0.63.dmg"
+        length="216009768"
+        type="application/octet-stream"
+        sparkle:edSignature="MXL8qLlPHzzaPJMnzUB0lpt5Ngq+zpFn6Kh1QkYGIWXGA0umAmc+7xZbvGClmD0qZAdsgJ2XxboRUy7XZfzLBw=="
+      />
+    </item>
+
   </channel>
 </rss>
