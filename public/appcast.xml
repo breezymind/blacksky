@@ -861,5 +861,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.65</title>
+      <description><![CDATA[- 성인 음란물의 경우 블라인드시에 프로필이미지도 블라인드 합니다]]></description>
+      <pubDate>Sun, 02 Aug 2026 21:26:18 +0900</pubDate>
+      <sparkle:version>66</sparkle:version>
+      <sparkle:shortVersionString>1.0.65</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.65/blacksky-1.0.65.dmg"
+        length="218396188"
+        type="application/octet-stream"
+        sparkle:edSignature="N6n0XU4iKztwTbX4nHXmeXDdvBHXcI5MeQzKaNA6bCsFrrGjpO2qEZfggv555Vr2OQq2omJIJMJ9eC103pKTBA=="
+      />
+    </item>
+
   </channel>
 </rss>
