@@ -830,5 +830,21 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.62</title>
+      <description><![CDATA[- 필터기준을 조정하고 판단 기준이 되는 모델 사용을 CPU 로만 처리 하기로 했습니다.
+- 오싹한 연애라는 드라마가 재미있더라고요? :)]]></description>
+      <pubDate>Sun, 02 Aug 2026 17:25:31 +0900</pubDate>
+      <sparkle:version>63</sparkle:version>
+      <sparkle:shortVersionString>1.0.62</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.62/blacksky-1.0.62.dmg"
+        length="215899321"
+        type="application/octet-stream"
+        sparkle:edSignature="Ta4ApmZo8T29G2KBjXmaGyrGXJPTbD7f3SLxYmv9YhbQGuJ+Y0oiDjXC4LLly6bWV488mO++Hc4foyuaiyV8AQ=="
+      />
+    </item>
+
   </channel>
 </rss>
