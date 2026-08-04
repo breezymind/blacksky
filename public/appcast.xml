@@ -966,5 +966,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.72</title>
+      <description><![CDATA[- 리포스트 게시물은 feeds 에 추가 only posts 피드를 활용하세요]]></description>
+      <pubDate>Tue, 04 Aug 2026 21:26:15 +0900</pubDate>
+      <sparkle:version>73</sparkle:version>
+      <sparkle:shortVersionString>1.0.72</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.72/blacksky-1.0.72.dmg"
+        length="218499206"
+        type="application/octet-stream"
+        sparkle:edSignature="dSREUrLDTW9NTHBMegd1glk5+lADm1Tq9o3469nGa9auqmvZD0o0j9oEq1ZRW58aDeSEw9EMOjShTtdRYZ+UAQ=="
+      />
+    </item>
+
   </channel>
 </rss>
