@@ -951,5 +951,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.71</title>
+      <description><![CDATA[- 디자인 개선 및 팔로잉/팔로워 기능 추가 ]]></description>
+      <pubDate>Tue, 04 Aug 2026 17:54:57 +0900</pubDate>
+      <sparkle:version>72</sparkle:version>
+      <sparkle:shortVersionString>1.0.71</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.71/blacksky-1.0.71.dmg"
+        length="218516540"
+        type="application/octet-stream"
+        sparkle:edSignature="MHgbpdQBFcER4Ytkx6oS2p7GLtv7dRJnh7PUu3/Z1MBCUymWVYurjmgk036ea2ND8VKVnmSRJKzpqY5JZ/3wAQ=="
+      />
+    </item>
+
   </channel>
 </rss>
