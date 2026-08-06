@@ -996,5 +996,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.74</title>
+      <description><![CDATA[메인메뉴 접기 후 상단에 버튼 추가 ]]></description>
+      <pubDate>Thu, 06 Aug 2026 18:41:51 +0900</pubDate>
+      <sparkle:version>75</sparkle:version>
+      <sparkle:shortVersionString>1.0.74</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.74/blacksky-1.0.74.dmg"
+        length="218661507"
+        type="application/octet-stream"
+        sparkle:edSignature="w7H+nWkjyDkOr4lJfsH4SRU+Dciqz3gwgNtyOpGsxBpWLvLf/JuTAOFuIT4UocW9+o2WRYb3mE1CJT6OTNsZAA=="
+      />
+    </item>
+
   </channel>
 </rss>
