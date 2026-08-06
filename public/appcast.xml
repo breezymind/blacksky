@@ -1056,5 +1056,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.78</title>
+      <description><![CDATA[ - 갤러리 모드에서 이미지월을 만들어 새 게시물을 만들 수 있습니다.]]></description>
+      <pubDate>Fri, 07 Aug 2026 01:43:52 +0900</pubDate>
+      <sparkle:version>79</sparkle:version>
+      <sparkle:shortVersionString>1.0.78</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.78/blacksky-1.0.78.dmg"
+        length="218844037"
+        type="application/octet-stream"
+        sparkle:edSignature="zexuUehwKMsfTnpSoRm58rfg/AST0eRimgHToq9ZJOx+YoS/KJ8k7IsCm4FSeXU09TWZbF7s0ImtGC8kSJ3aBw=="
+      />
+    </item>
+
   </channel>
 </rss>
