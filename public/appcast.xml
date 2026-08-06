@@ -1026,5 +1026,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.76</title>
+      <description><![CDATA[- 메인화면 접기 후에  4개의 메인메뉴 추가]]></description>
+      <pubDate>Thu, 06 Aug 2026 19:50:05 +0900</pubDate>
+      <sparkle:version>77</sparkle:version>
+      <sparkle:shortVersionString>1.0.76</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.76/blacksky-1.0.76.dmg"
+        length="218648273"
+        type="application/octet-stream"
+        sparkle:edSignature="9jtsk7rTVMRqt7HDUh8L4ZnlQHRkZRyhxUXbl6O4YzRI5GA1Nt4k8ATpCpWCE4dYhzsYSJfJJuvw/O3K3TTMDA=="
+      />
+    </item>
+
   </channel>
 </rss>
