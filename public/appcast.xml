@@ -1102,5 +1102,21 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.82</title>
+      <description><![CDATA[- 갤러리 모드의 이미지를 모아서 새글쓰기에 첨부할 수 있는 기능
+- 친구들 메뉴에 검색기능 추가]]></description>
+      <pubDate>Fri, 07 Aug 2026 15:28:05 +0900</pubDate>
+      <sparkle:version>83</sparkle:version>
+      <sparkle:shortVersionString>1.0.82</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.82/blacksky-1.0.82.dmg"
+        length="219300669"
+        type="application/octet-stream"
+        sparkle:edSignature="a5ITPOhSzLE5zEqHZbVzc+Nt8cNn+HwGMr7sLzNOizBm3+gP4fFfXK7cwc50ckiH2hX8dLEj53FrR5S195kNAA=="
+      />
+    </item>
+
   </channel>
 </rss>
