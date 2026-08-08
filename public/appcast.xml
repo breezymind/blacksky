@@ -1133,5 +1133,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.85</title>
+      <description><![CDATA[ 갤러리모드 이미지묶음 새글쓰기 보완]]></description>
+      <pubDate>Sat, 08 Aug 2026 17:46:00 +0900</pubDate>
+      <sparkle:version>86</sparkle:version>
+      <sparkle:shortVersionString>1.0.85</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.85/blacksky-1.0.85.dmg"
+        length="219242025"
+        type="application/octet-stream"
+        sparkle:edSignature="2i5can3lmsW73GhATzb08EghynO3SACDhewZwfKS+txRjN/BpPGa8QL4JmVxOJDhG/D3+sVoi8hrzfET7Vh9Dw=="
+      />
+    </item>
+
   </channel>
 </rss>
