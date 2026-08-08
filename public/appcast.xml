@@ -1179,5 +1179,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.88</title>
+      <description><![CDATA[- 갤러리모드 이미지생성 개선]]></description>
+      <pubDate>Sat, 08 Aug 2026 19:37:06 +0900</pubDate>
+      <sparkle:version>89</sparkle:version>
+      <sparkle:shortVersionString>1.0.88</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.88/blacksky-1.0.88.dmg"
+        length="218986119"
+        type="application/octet-stream"
+        sparkle:edSignature="uwDGZjcpWjrnaIZrslLDLnzEDLP4lDoCV1REZNsxgz2ROG7s7wxM9QPg4wPgHGvPWdPci7ya59Sxm3fuQTNRCw=="
+      />
+    </item>
+
   </channel>
 </rss>
