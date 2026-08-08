@@ -1148,5 +1148,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.86</title>
+      <description><![CDATA[- 피드목록 갤러리모드의 이미지 생성을 개선]]></description>
+      <pubDate>Sat, 08 Aug 2026 18:23:42 +0900</pubDate>
+      <sparkle:version>87</sparkle:version>
+      <sparkle:shortVersionString>1.0.86</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.86/blacksky-1.0.86.dmg"
+        length="218987680"
+        type="application/octet-stream"
+        sparkle:edSignature="WxOEra+39oVuziGG8EpKIIQhm+BaVQ++LuUzBVVKewrlJDwEAQkSPW8EjrrVK78vSvn32Gngx3Pl0zMf/Yf0CA=="
+      />
+    </item>
+
   </channel>
 </rss>
