@@ -1224,5 +1224,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.93</title>
+      <description><![CDATA[신고기능에 차단기능을 함께 적용했습니다.]]></description>
+      <pubDate>Sun, 09 Aug 2026 00:29:55 +0900</pubDate>
+      <sparkle:version>94</sparkle:version>
+      <sparkle:shortVersionString>1.0.93</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.93/blacksky-1.0.93.dmg"
+        length="219260613"
+        type="application/octet-stream"
+        sparkle:edSignature="2bJoMPZ/BfgZVpv1Bt9a89xMX8Mmr5U01THA82wlU53Pv9zkvCzUVfK2QJx8Q7djd21lNhyuY7I+Zjaw3KIgDA=="
+      />
+    </item>
+
   </channel>
 </rss>
