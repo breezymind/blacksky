@@ -1239,5 +1239,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.94</title>
+      <description><![CDATA[- 애플 리젝 사유 문제사항 수정]]></description>
+      <pubDate>Sun, 09 Aug 2026 17:27:39 +0900</pubDate>
+      <sparkle:version>95</sparkle:version>
+      <sparkle:shortVersionString>1.0.94</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.94/blacksky-1.0.94.dmg"
+        length="219195412"
+        type="application/octet-stream"
+        sparkle:edSignature="VdsBRk4VZiZAfVOCQGyn311SuhTMbPlhNUZmEXPDjkZn4L5/CI7DQq6TQv2Jd8lJZGJaZPZ9KrlThs1wGK2oAA=="
+      />
+    </item>
+
   </channel>
 </rss>
