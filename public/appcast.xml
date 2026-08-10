@@ -1254,5 +1254,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.95</title>
+      <description><![CDATA[- 피드에서 리포스트를 숨길수 있는 설정을 추가]]></description>
+      <pubDate>Tue, 11 Aug 2026 00:58:24 +0900</pubDate>
+      <sparkle:version>96</sparkle:version>
+      <sparkle:shortVersionString>1.0.95</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.95/blacksky-1.0.95.dmg"
+        length="219296770"
+        type="application/octet-stream"
+        sparkle:edSignature="hXpd2ULXtSVch+c8YhTcDp0Zq/Wlg6E15rvZvQoZ1zEF1rz02uh1igj9u7CZXjIGT1hu3K5EXHR16W6zdd+QBg=="
+      />
+    </item>
+
   </channel>
 </rss>
