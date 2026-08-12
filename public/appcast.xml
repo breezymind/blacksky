@@ -1269,5 +1269,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.96</title>
+      <description><![CDATA[- 기불편 개선 반영]]></description>
+      <pubDate>Wed, 12 Aug 2026 16:37:33 +0900</pubDate>
+      <sparkle:version>97</sparkle:version>
+      <sparkle:shortVersionString>1.0.96</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.96/blacksky-1.0.96.dmg"
+        length="219890800"
+        type="application/octet-stream"
+        sparkle:edSignature="hsTbkKdKtd7vKZ+lELtCuzl0DUpYYoywlKKbSrOM3aroI1iNNp1Hx4jEQmf+BSkfM2IPSAQkgGWWwVZtcjP2DQ=="
+      />
+    </item>
+
   </channel>
 </rss>
