@@ -1284,5 +1284,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.97</title>
+      <description><![CDATA[- 광고 및 편의성 고도화 ]]></description>
+      <pubDate>Thu, 13 Aug 2026 13:05:28 +0900</pubDate>
+      <sparkle:version>98</sparkle:version>
+      <sparkle:shortVersionString>1.0.97</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.97/blacksky-1.0.97.dmg"
+        length="219870812"
+        type="application/octet-stream"
+        sparkle:edSignature="Vz1XX/1AWiDCotXx5iXLPQZNlxyJgoXCGGbvPMGT1B8e3Tq48XdimAHBIVTDgwh3BMxK5ir+huqCynY1EfaQBQ=="
+      />
+    </item>
+
   </channel>
 </rss>
