@@ -1329,5 +1329,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.100</title>
+      <description><![CDATA[- 핸들 검색 개선]]></description>
+      <pubDate>Thu, 13 Aug 2026 23:15:43 +0900</pubDate>
+      <sparkle:version>101</sparkle:version>
+      <sparkle:shortVersionString>1.0.100</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.100/blacksky-1.0.100.dmg"
+        length="219119490"
+        type="application/octet-stream"
+        sparkle:edSignature="Hdft5HN78s8p977Xwx0BJieEvM1/q95zrH9TjRaluNt59D3J6qoafV9frfhRRzcc4HGuZHbTk95KRU+0vVOIBA=="
+      />
+    </item>
+
   </channel>
 </rss>
