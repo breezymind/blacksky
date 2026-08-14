@@ -1344,5 +1344,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.101</title>
+      <description><![CDATA[- 아이콘 위치 변경 및 핸들 검색 개선 ]]></description>
+      <pubDate>Fri, 14 Aug 2026 13:41:23 +0900</pubDate>
+      <sparkle:version>102</sparkle:version>
+      <sparkle:shortVersionString>1.0.101</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.101/blacksky-1.0.101.dmg"
+        length="219841403"
+        type="application/octet-stream"
+        sparkle:edSignature="KtRf/j+F2iUWmgikdgBXxXs5F1/qku4Ru3BYcSRe8tKAnMEI9MjrgMyjXouPXtv82Ui8We0adWhM49ycW3ImCg=="
+      />
+    </item>
+
   </channel>
 </rss>
