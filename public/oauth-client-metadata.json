@@ -11,7 +11,7 @@
   "response_types": [
     "code"
   ],
-  "scope": "atproto transition:generic",
+  "scope": "atproto transition:generic include:chat.bsky.authFullChatClient?aud=did:web:api.bsky.chat%23bsky_chat",
   "dpop_bound_access_tokens": true,
   "token_endpoint_auth_method": "none"
 }
