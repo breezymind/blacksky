@@ -1359,5 +1359,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.102</title>
+      <description><![CDATA[- 그채팅기능 추가 및 자동영상 플레이 추가]]></description>
+      <pubDate>Fri, 14 Aug 2026 19:51:41 +0900</pubDate>
+      <sparkle:version>103</sparkle:version>
+      <sparkle:shortVersionString>1.0.102</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.102/blacksky-1.0.102.dmg"
+        length="220920184"
+        type="application/octet-stream"
+        sparkle:edSignature="GRs5gift87E/uZWgUkNBhFuzrFH3gxeEzP/NqSqwM7YmD01ox4gLjqEu++ykZSYZJPeA5/BwOiqJFGs6cUBaAg=="
+      />
+    </item>
+
   </channel>
 </rss>
