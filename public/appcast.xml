@@ -1449,5 +1449,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.116</title>
+      <description><![CDATA[- iPad UI 개선]]></description>
+      <pubDate>Sun, 16 Aug 2026 22:53:39 +0900</pubDate>
+      <sparkle:version>117</sparkle:version>
+      <sparkle:shortVersionString>1.0.116</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.116/blacksky-1.0.116.dmg"
+        length="221065318"
+        type="application/octet-stream"
+        sparkle:edSignature="tK0kGL7myhUKxD629qf7zLh/zx4I6Dkeei3HnrpS/KBkuODNo5gyFRbGzTZnIox14T3adNUK4bMZRxuSHcYIDA=="
+      />
+    </item>
+
   </channel>
 </rss>
