@@ -1464,5 +1464,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 2.0.2</title>
+      <description><![CDATA[- U 개선 ]]></description>
+      <pubDate>Mon, 17 Aug 2026 00:53:06 +0900</pubDate>
+      <sparkle:version>108</sparkle:version>
+      <sparkle:shortVersionString>2.0.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v2.0.2/blacksky-2.0.2.dmg"
+        length="221071683"
+        type="application/octet-stream"
+        sparkle:edSignature="1Tb7SQ/pFW9HubPMYyOtdahjQj6cnJTDrNnIA4h8ayHLhxpxVI2iThdiLq7UYjaihvSmz8FwEPEgjMg3ZZCYAw=="
+      />
+    </item>
+
   </channel>
 </rss>
