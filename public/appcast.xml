@@ -1404,5 +1404,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.106</title>
+      <description><![CDATA[- - iPad 입력창 수정 및 이미지 노출 UI 변경]]></description>
+      <pubDate>Sun, 16 Aug 2026 20:07:49 +0900</pubDate>
+      <sparkle:version>107</sparkle:version>
+      <sparkle:shortVersionString>1.0.106</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.106/blacksky-1.0.106.dmg"
+        length="221245233"
+        type="application/octet-stream"
+        sparkle:edSignature="/I+Jl18jVq+UKgxu+JmA8SX3ijZdUsXv1t8wBU3Y/vWhQq8M6yi0bBEI0guzQoJhey0FdqQjEJ7Ipd3N/q3yAQ=="
+      />
+    </item>
+
   </channel>
 </rss>
