@@ -1434,5 +1434,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.107</title>
+      <description><![CDATA[- ipad 사용성 개선 ]]></description>
+      <pubDate>Sun, 16 Aug 2026 21:07:13 +0900</pubDate>
+      <sparkle:version>108</sparkle:version>
+      <sparkle:shortVersionString>1.0.107</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.107/blacksky-1.0.107.dmg"
+        length="221060351"
+        type="application/octet-stream"
+        sparkle:edSignature="kGQHmcBs3tWcIHpWqfXoYWsGYyD4PQvuhAh6Kqi3QhaGAp6ikwbgiebq0lR0ENW/xugJ7PvDnAu2pGfyjV/VCA=="
+      />
+    </item>
+
   </channel>
 </rss>
