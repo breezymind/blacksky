@@ -1389,5 +1389,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 1.0.104</title>
+      <description><![CDATA[- 안정성 보완 메모리 사용률 조정]]></description>
+      <pubDate>Sun, 16 Aug 2026 18:10:56 +0900</pubDate>
+      <sparkle:version>105</sparkle:version>
+      <sparkle:shortVersionString>1.0.104</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v1.0.104/blacksky-1.0.104.dmg"
+        length="221060945"
+        type="application/octet-stream"
+        sparkle:edSignature="QZYSR+bymTEYAv0tn15Q8yz7ehwl4cU+dPtTfHARdRmH54cg4F2V7Es2sNtzc2Xm3iJGvuKj5de1w8YBSdcMBg=="
+      />
+    </item>
+
   </channel>
 </rss>
