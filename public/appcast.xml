@@ -1479,5 +1479,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 2.0.3</title>
+      <description><![CDATA[- 주소복사 기능, 댓글 숨기기 설정 추가 ]]></description>
+      <pubDate>Tue, 18 Aug 2026 01:15:02 +0900</pubDate>
+      <sparkle:version>109</sparkle:version>
+      <sparkle:shortVersionString>2.0.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v2.0.3/blacksky-2.0.3.dmg"
+        length="221552185"
+        type="application/octet-stream"
+        sparkle:edSignature="IWsfPP8SnposzT1+Rc+iYyG+yOy/4d0LJp8HRQqFYgCJna53hbL5nnTzHbJbejTmCGaBCSOvVc7WQ32XbaH4DQ=="
+      />
+    </item>
+
   </channel>
 </rss>
