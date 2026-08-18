@@ -1509,5 +1509,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 2.0.5</title>
+      <description><![CDATA[- Mac 전용앱에서 이미지 사이즈 조절 ]]></description>
+      <pubDate>Wed, 19 Aug 2026 00:28:58 +0900</pubDate>
+      <sparkle:version>118</sparkle:version>
+      <sparkle:shortVersionString>2.0.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v2.0.5/blacksky-2.0.5.dmg"
+        length="221180129"
+        type="application/octet-stream"
+        sparkle:edSignature="Ai39IKGYYqLrOpIOzZYNKjsuDioEYtxXB9rJv8yZVd7FvuamOBdXElHBmknYEiA/eGe4E4Bx/7t+orv/mcBzDw=="
+      />
+    </item>
+
   </channel>
 </rss>
