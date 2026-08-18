@@ -1494,5 +1494,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 2.0.4</title>
+      <description><![CDATA[- Mac 화면에서 첨부이미지 사이즈 조절 ]]></description>
+      <pubDate>Tue, 18 Aug 2026 22:14:00 +0900</pubDate>
+      <sparkle:version>110</sparkle:version>
+      <sparkle:shortVersionString>2.0.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v2.0.4/blacksky-2.0.4.dmg"
+        length="221238037"
+        type="application/octet-stream"
+        sparkle:edSignature="ksyytS2NLfwKn5t42iaF8frNUHldPkEjs9jZmnkPIYVi+K/cTsGmBnOAc8emgrpEObE045yJ1NomVq/x/BvlAw=="
+      />
+    </item>
+
   </channel>
 </rss>
