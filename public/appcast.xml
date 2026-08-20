@@ -1524,5 +1524,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 2.0.7</title>
+      <description><![CDATA[기타 버그 수정과 계정 사용 편의성 제공]]></description>
+      <pubDate>Thu, 20 Aug 2026 13:11:29 +0900</pubDate>
+      <sparkle:version>120</sparkle:version>
+      <sparkle:shortVersionString>2.0.7</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v2.0.7/blacksky-2.0.7.dmg"
+        length="221437052"
+        type="application/octet-stream"
+        sparkle:edSignature="AC1I5NJRSLTFYNTwhyXci1AiLg82fWg86GlZNugscvVZxVxozjiuB0wZJi/jh6qTgNq8fJXpZSvAGoMPgE5nDA=="
+      />
+    </item>
+
   </channel>
 </rss>
