@@ -1614,5 +1614,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 2.0.21</title>
+      <description><![CDATA[- 사용성 개선 ]]></description>
+      <pubDate>Mon, 24 Aug 2026 22:54:20 +0900</pubDate>
+      <sparkle:version>134</sparkle:version>
+      <sparkle:shortVersionString>2.0.21</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v2.0.21/blacksky-2.0.21.dmg"
+        length="221914957"
+        type="application/octet-stream"
+        sparkle:edSignature="D1bFICpThFPh5W/BTTDmGeDTsh1IsyQoq4ZTw/HL/PNZmv+JQqW76n3949P5n7ks8G12wVzwHVcj7ZdiYs13Ag=="
+      />
+    </item>
+
   </channel>
 </rss>
