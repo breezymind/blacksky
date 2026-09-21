@@ -1704,5 +1704,20 @@
       />
     </item>
 
+    <item>
+      <title>Version 4.0.2</title>
+      <description><![CDATA[- 북마크 기능 추가]]></description>
+      <pubDate>Mon, 21 Sep 2026 15:16:10 +0900</pubDate>
+      <sparkle:version>152</sparkle:version>
+      <sparkle:shortVersionString>4.0.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/breezymind/blacksky/releases/download/v4.0.2/blacksky-4.0.2.dmg"
+        length="221958627"
+        type="application/octet-stream"
+        sparkle:edSignature="JrXHSFwdqI4cPDvI80m9sP9gBpi7ei5RSJH28ClUqmqF4OJXA6WZ2nK6CdqRR8V2x2rxZPybvMnBl0ZbhG9qCg=="
+      />
+    </item>
+
   </channel>
 </rss>
